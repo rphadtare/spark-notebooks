@@ -22,3 +22,14 @@ steps:
     echo resource group: $(databricks_resource_group)
     echo databricks workspace: $(databricks_workspace_name)
   displayName: 'Run a multi-line script'
+- task: CopyFiles@2
+  inputs:
+    Contents: 'mdl-pipeline/*'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: "Copying files from spark-notebooks/mdl-pipeline"  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+  displayName: "Publishing artificats to get all notebooks"
