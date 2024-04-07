@@ -19,6 +19,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo resource group: $databricks_resource_group
-    echo databricks workspace: $databricks_workspace_name
+    echo resource group: $(databricks_resource_group)
+    echo databricks workspace: $(databricks_workspace_name)
   displayName: 'Run a multi-line script'
