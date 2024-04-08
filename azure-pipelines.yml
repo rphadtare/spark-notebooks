@@ -21,6 +21,7 @@ steps:
 - script: |
     echo resource group: $(databricks_resource_group)
     echo databricks workspace: $(databricks_workspace_name)
+    echo databricks region: $(databricks-azure-region)
   displayName: 'Run a multi-line script'
 - task: CopyFiles@2
   inputs:
