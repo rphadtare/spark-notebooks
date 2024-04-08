@@ -28,6 +28,7 @@ steps:
     Contents: 'mdl-pipeline/*'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: "Copying files from spark-notebooks/mdl-pipeline"  
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
